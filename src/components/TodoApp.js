@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './layouts/Header';
+import Todos from './Todos';
 class TodoApp extends React.Component {
     state = {
         todos: [
@@ -22,13 +23,9 @@ class TodoApp extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className='container'>
                 <Header></Header>
-                <ul>
-                    {this.state.todos.map(todo => (
-                        <li key={todo.id}>{todo.title}</li>
-                    ))}
-                </ul>
+                <Todos todos={this.state.todos}></Todos>
             </div>
         )
     }
