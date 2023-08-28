@@ -22,7 +22,14 @@ class TodoApp extends React.Component {
         ]
     };
     handleCheckboxChange = (id) => {
-        console.log("you clicked on checkbox with id " + id);
+        this.setState({
+            todos: this.state.todos.map(todo => {
+                if (todo.id === id) {
+                    todo.completed = !todo.completed;
+                }
+                return todo;
+            })
+        })
     }
     render() {
         return (
