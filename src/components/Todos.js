@@ -6,7 +6,7 @@ class Todos extends React.Component {
             <div>
                 <ul>
                     {this.props.todos.map(todo => (
-                        <TodoItem todo={todo} handleCheckbox={this.props.handleCheckbox}></TodoItem>
+                        <TodoItem todo={todo} handleCheckbox={this.props.handleCheckbox} deleteTodo={this.props.deleteTodo}></TodoItem>
                     ))}
                 </ul>
             </div>
