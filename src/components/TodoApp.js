@@ -21,7 +21,7 @@ class TodoApp extends React.Component {
             }
         ]
     };
-    handleCheckboxChange = (id) => {
+    handleCheckboxChange = id => {
         this.setState({
             todos: this.state.todos.map(todo => {
                 if (todo.id === id) {
@@ -31,11 +31,18 @@ class TodoApp extends React.Component {
             })
         })
     }
+    deleteTodo = id => {
+        this.setState({
+            todos: this.state.todos.filter(todo => {
+                if (todo.id !== id) return todo;
+            })
+        })
+    }
     render() {
         return (
             <div className='container'>
                 <Header></Header>
-                <Todos todos={this.state.todos} handleCheckbox={this.handleCheckboxChange}></Todos>
+                <Todos todos={this.state.todos} handleCheckbox={this.handleCheckboxChange} deleteTodo={this.deleteTodo}></Todos>
             </div>
         )
     }
