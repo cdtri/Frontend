@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './layouts/Header';
 import Todos from './Todos';
+import AddTodo from './AddTodo';
 class TodoApp extends React.Component {
     state = {
         todos: [
@@ -42,6 +43,7 @@ class TodoApp extends React.Component {
         return (
             <div className='container'>
                 <Header></Header>
+                <AddTodo></AddTodo>
                 <Todos todos={this.state.todos} handleCheckbox={this.handleCheckboxChange} deleteTodo={this.deleteTodo}></Todos>
             </div>
         )
